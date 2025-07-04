@@ -1,0 +1,144 @@
+@import '../../../styles/variables';
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, $primary-color, $secondary-color);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-box {
+  background-color: $neumorphic-background;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px $neumorphic-shadow-dark, -10px -10px 20px $neumorphic-shadow-light;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+h2 {
+  color: $text-color;
+  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: $font-weight-bold;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+
+  input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: $neumorphic-background;
+    box-shadow: inset 5px 5px 10px $neumorphic-shadow-inset-dark, inset -5px -5px 10px $neumorphic-shadow-inset-light;
+    font-size: 1em;
+    color: $text-color;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &:focus {
+      box-shadow: inset 2px 2px 5px $neumorphic-shadow-inset-dark, inset -2px -2px 5px $neumorphic-shadow-inset-light, 0 0 0 3px $primary-color;
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      top: -10px;
+      font-size: 0.8em;
+      color: $primary-color;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: $text-color;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 0.9em;
+
+  .remember-me {
+    display: flex;
+    align-items: center;
+    color: $text-color;
+
+    input[type="checkbox"] {
+      margin-right: 8px;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      background-color: $neumorphic-background;
+      box-shadow: inset 2px 2px 5px $neumorphic-shadow-inset-dark, inset -2px -2px 5px $neumorphic-shadow-inset-light;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+
+      &:checked {
+        background-color: $primary-color;
+        box-shadow: none;
+
+        &::after {
+          content: '\2713';
+          font-size: 14px;
+          color: $white-color;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  .forgot-password {
+    color: $primary-color;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.login-btn {
+  background: linear-gradient(45deg, $primary-color, $secondary-color);
+  color: $white-color;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px $neumorphic-shadow-dark, -5px -5px 10px $neumorphic-shadow-light;
+  transition: all 0.3s ease;
+  width: 100%;
+
+  &:hover {
+    background: linear-gradient(45deg, darken($primary-color, 5%), darken($secondary-color, 5%));
+    box-shadow: 7px 7px 15px $neumorphic-shadow-dark, -7px -7px 15px $neumorphic-shadow-light;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: inset 2px 2px 5px $neumorphic-shadow-inset-dark, inset -2px -2px 5px $neumorphic-shadow-inset-light;
+    transform: translateY(0);
+  }
+}

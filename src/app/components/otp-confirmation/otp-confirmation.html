@@ -1,0 +1,19 @@
+<div class="otp-container">
+  <canvas></canvas>
+  <div class="otp-box">
+    <h2>OTP Verification</h2>
+    <p>Enter the OTP sent to your mobile number</p>
+    <div class="otp-input-fields">
+      <input type="text" maxlength="1" (keyup)="onOtpInput($event)">
+      <input type="text" maxlength="1" (keyup)="onOtpInput($event)">
+      <input type="text" maxlength="1" (keyup)="onOtpInput($event)">
+      <input type="text" maxlength="1" (keyup)="onOtpInput($event)">
+    </div>
+    <div class="countdown-timer">
+      <div class="progress-bar"></div>
+      <span>{{ countdown }}s</span>
+    </div>
+    <button class="verify-btn" (click)="verifyOtp()">Verify</button>
+    <a href="#" class="resend-otp">Resend OTP</a>
+  </div>
+</div>

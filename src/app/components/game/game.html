@@ -1,0 +1,24 @@
+<div id="tsparticles"></div>
+<div class="game-container">
+  <div class="called-numbers">
+    <h2>Called Numbers</h2>
+    <div class="numbers-grid">
+      <div class="number" *ngFor="let number of calledNumbers">{{ number }}</div>
+    </div>
+  </div>
+  <div class="bingo-card-container">
+    <div class="bingo-card">
+      <div class="bingo-grid">
+        <div class="cell" *ngFor="let cell of bingoCard" (click)="toggleCell(cell)" [class.selected]="cell.selected">
+          {{ cell.number }}
+        </div>
+      </div>
+    </div>
+    <button class="bingo-btn" (click)="checkBingo()">Bingo!</button>
+  </div>
+  <div class="player-info">
+    <h2>Player Info</h2>
+    <div class="info-item"><strong>Username:</strong> Player1</div>
+    <div class="info-item"><strong>Score:</strong> 100</div>
+  </div>
+</div>

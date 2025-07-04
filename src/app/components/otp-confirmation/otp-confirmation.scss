@@ -1,0 +1,146 @@
+@import '../../../styles/variables';
+
+.otp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, $primary-color, $secondary-color);
+  padding: 20px;
+  box-sizing: border-box;
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
+
+.otp-box {
+  background-color: $neumorphic-background;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px $neumorphic-shadow-dark, -10px -10px 20px $neumorphic-shadow-light;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+h2 {
+  color: $text-color;
+  margin-bottom: 15px;
+  font-size: 2em;
+  font-weight: $font-weight-bold;
+}
+
+p {
+  color: $text-color;
+  margin-bottom: 30px;
+}
+
+.otp-input-fields {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+
+  input {
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 10px;
+    background-color: $neumorphic-background;
+    box-shadow: inset 5px 5px 10px $neumorphic-shadow-inset-dark, inset -5px -5px 10px $neumorphic-shadow-inset-light;
+    color: $text-color;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &:focus {
+      box-shadow: inset 2px 2px 5px $neumorphic-shadow-inset-dark, inset -2px -2px 5px $neumorphic-shadow-inset-light, 0 0 0 3px $primary-color;
+    }
+  }
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 30px auto;
+
+  .progress-bar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient($primary-color 360deg, #f0f0f0 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: $neumorphic-background;
+      box-shadow: inset 5px 5px 10px $neumorphic-shadow-inset-dark, inset -5px -5px 10px $neumorphic-shadow-inset-light;
+    }
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    font-size: 1.5em;
+    font-weight: $font-weight-bold;
+    color: $text-color;
+  }
+}
+
+.verify-btn {
+  background: linear-gradient(45deg, $primary-color, $secondary-color);
+  color: $white-color;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px $neumorphic-shadow-dark, -5px -5px 10px $neumorphic-shadow-light;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 20px;
+
+  &:hover {
+    background: linear-gradient(45deg, darken($primary-color, 5%), darken($secondary-color, 5%));
+    box-shadow: 7px 7px 15px $neumorphic-shadow-dark, -7px -7px 15px $neumorphic-shadow-light;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: inset 2px 2px 5px $neumorphic-shadow-inset-dark, inset -2px -2px 5px $neumorphic-shadow-inset-light;
+    transform: translateY(0);
+  }
+}
+
+.resend-otp {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}
